@@ -1,73 +1,8 @@
 import { Card, Image } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-import React,{useState} from 'react';
+import React, { useState } from 'react';
+import { dummyData } from './data/data';
 
-const dummyData = [
-    {
-        id: 1,
-        title: "Skilled Trainers",
-        description: "Learn from experienced industry professionals who provide hands-on knowledge with real-life applications.",
-        thumbnail: "https://example.com/product1.jpg",
-    },
-    {
-        id: 2,
-        title: "Live & Interactive",
-        description: "Communicate and engage with your trainer and other students for a collaborative learning experience.",
-        thumbnail: "https://example.com/product2.jpg",
-    },
-    {
-        id: 3,
-        title: "Convenient & Remote",
-        description: "Recorded sessions for learning at your own pace. Safe and easy access to all trainings and webinars.",
-        thumbnail: "https://example.com/product3.jpg",
-    },
-    {
-        id: 4,
-        title: "Convenient & Remote",
-        description: "Recorded sessions for learning at your own pace. Safe and easy access to all trainings and webinars.",
-        thumbnail: "https://example.com/product3.jpg",
-    }, {
-        id: 5,
-        title: "Convenient & Remote",
-        description: "Recorded sessions for learning at your own pace. Safe and easy access to all trainings and webinars.",
-        thumbnail: "https://example.com/product3.jpg",
-    }, {
-        id: 6,
-        title: "Convenient & Remote",
-        description: "Recorded sessions for learning at your own pace. Safe and easy access to all trainings and webinars.",
-        thumbnail: "https://example.com/product3.jpg",
-    }, {
-        id: 7,
-        title: "Convenient & Remote",
-        description: "Recorded sessions for learning at your own pace. Safe and easy access to all trainings and webinars.",
-        thumbnail: "https://example.com/product3.jpg",
-    }, {
-        id: 8,
-        title: "Convenient & Remote",
-        description: "Recorded sessions for learning at your own pace. Safe and easy access to all trainings and webinars.",
-        thumbnail: "https://example.com/product3.jpg",
-    }, {
-        id: 9,
-        title: "Convenient & Remote",
-        description: "Recorded sessions for learning at your own pace. Safe and easy access to all trainings and webinars.",
-        thumbnail: "https://example.com/product3.jpg",
-    }, {
-        id: 10,
-        title: "Convenient & Remote",
-        description: "Recorded sessions for learning at your own pace. Safe and easy access to all trainings and webinars.",
-        thumbnail: "https://example.com/product3.jpg",
-    }, {
-        id: 11,
-        title: "Convenient & Remote",
-        description: "Recorded sessions for learning at your own pace. Safe and easy access to all trainings and webinars.",
-        thumbnail: "https://example.com/product3.jpg",
-    }, {
-        id: 12,
-        title: "Convenient & Remote",
-        description: "Recorded sessions for learning at your own pace. Safe and easy access to all trainings and webinars.",
-        thumbnail: "https://example.com/product3.jpg",
-    },
-];
 const Allfields = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const filteredData = dummyData.filter(
@@ -106,9 +41,9 @@ const Allfields = () => {
                         <Card
                             hoverable
                             className="transition-transform hover:transform hover:scale-125 "
-                            cover={<Image 
-                                src={"https://img.youtube.com/vi/tEOoJqqCskM/maxresdefault.jpg"} 
-                                alt={item.title} 
+                            cover={<Image
+                                src={"https://img.youtube.com/vi/tEOoJqqCskM/maxresdefault.jpg"}
+                                alt={item.title}
                                 className='!w-[300px]  !h-[160px]' />}
                         >
                             <Card.Meta title={<div className='text-xl mb-2 text-black'>{item.title}</div>} />

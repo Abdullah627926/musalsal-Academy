@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Layout, Menu, Button } from 'antd';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const { Header } = Layout;
 const { SubMenu } = Menu;
@@ -10,7 +11,7 @@ const Navbar = () => {
   const [hoveredAboutUs, setHoveredAboutUs] = useState(false);
   const [hoveredExplore, setHoveredExplore] = useState(false);
   const [hoveredServices, setHoveredServices] = useState(false);
-
+const { push } = useRouter();
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
@@ -34,6 +35,7 @@ const Navbar = () => {
         <div>
           <Menu.Item key="logo" style={{ padding: '0' }}>
             <img
+            onClick={()=>push("/")}
               src="https://10pearlsuniversity.org/wp-content/uploads/2021/02/10PU-footer-logo.png"
               alt="Logo"
               style={{ height: '64px', width: 'auto' }}
@@ -49,7 +51,7 @@ const Navbar = () => {
           >
             {hoveredAboutUs && (
               <Menu className='hover:text-blue-700 transition duration-300'>
-                <Menu.Item key="1">Musalsal University</Menu.Item>
+                <Menu.Item key="1" onClick={()=>push('/about-us')} >Musalsal University</Menu.Item>
                 <Menu.Item key="2">Professional Development</Menu.Item>
                 <Menu.Item key="3">Musalsal Uni Orbit</Menu.Item>
               </Menu>
@@ -95,7 +97,9 @@ const Navbar = () => {
             <Link href={"contact"}>Contact Us</Link>
           </Menu.Item>
           <Menu.Item className="ml-[30px]">
-            <Button className='bg-blue-600' type="primary">
+            <Button
+            onClick={() => push("/login")}
+             className='bg-blue-600' type="primary">
               SIGN UP/LOGIN
             </Button>
           </Menu.Item>

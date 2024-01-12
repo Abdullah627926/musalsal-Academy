@@ -44,7 +44,9 @@ const Webinars = () => {
                                 key={item.id}
                                 hoverable
                                 className="w-[200px] h-[200px]  border-none bg-white text-black"
-                                cover={<Image src={"https://s3.amazonaws.com/images.seroundtable.com/google-amp-1454071566.jpg"} alt={item.title} className="!w-[250px] !h-[130px]" />}
+                                cover={<Image
+                                    preview={false}
+                                    src={"https://s3.amazonaws.com/images.seroundtable.com/google-amp-1454071566.jpg"} alt={item.title} className="!w-[250px] !h-[130px]" />}
                             >
                                 <Card.Meta title={<div className="text-xl mb-2 text-black">{item.title}</div>} />
                             </Card>

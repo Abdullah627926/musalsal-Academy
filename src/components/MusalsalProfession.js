@@ -32,7 +32,7 @@ const MusalsalProfessions = () => {
         {dummyData.map((item) => (
           <div className="" key={item.id}>
             <Card
-              hoverable
+              hoverable={false}
               className="w-[300px]   mt-[-100px] m-3 border-none  bg-inherit  !text-white "
               cover={
                 <Image

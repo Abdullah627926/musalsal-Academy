@@ -29,48 +29,45 @@ const dummyData = [
 ];
 
 const Courses = () => {
-    const router = useRouter();
+    const {push} = useRouter();
     const fourCards = dummyData.slice(0, 4);
 
-    const handleViewAll = () => {
-        // Check if the current route is different from the route you want to navigate to
-        if (router.pathname !== '/Allcategory') {
-            // Navigate to the 'Allcategory' page
-            router.push('./Allcategory');
-        }
-    };
-        return (
-            <div className=''>
-                <div className='mt-[50px]'>
-                    <h1 className='text-5xl font-bold flex justify-center mb-[20px] text-blue-800'>Courses</h1>
-                    <h2 className='text-xl flex justify-center mb-[30px] text-gray-700'>
-                        Hi! Looks like you haven’t started a course yet. Click here to browse through our range of courses.
-                    </h2>
-                </div>
-                <div className="flex justify-center flex-wrap space-x-4">
-                    {fourCards.map((item) => (
-                        <Card
-                            key={item.id}
-                            hoverable
-                            className="w-[300px] m-3 border-none bg-inherit text-black"
-                            cover={<Image src={"https://s3.amazonaws.com/images.seroundtable.com/google-amp-1454071566.jpg"} alt={item.title} className="!w-[300px] !h-[160px]" />}
-                        >
-                            <Card.Meta title={<div className="text-xl mb-2 text-black">{item.title}</div>} />
-                            <Card.Meta description={<div className="text-sm text-black">{item.description}</div>} />
-                        </Card>
-                    ))}
-                </div>
-                <div className="flex justify-center mt-10 mb-20">
-                    <Button className='!text-white font-medium w-[150px] bg-blue-700 !rounded-none'
-                         onClick={handleViewAll}
-                        type="primary"
-                        size="large">View All
-                        {/* <Link href={"../Allcategory"}> View All</Link> */}
-                    </Button>
-                    
-                </div>
-            </div>
-        );
-    };
 
-    export default Courses;
+    return (
+        <div className=''>
+            <div className='mt-[50px]'>
+                <h1 className='text-5xl font-bold flex justify-center mb-[20px] text-blue-800'>Courses</h1>
+                <h2 className='text-xl flex justify-center mb-[30px] text-gray-700'>
+                    Hi! Looks like you haven’t started a course yet. Click here to browse through our range of courses.
+                </h2>
+            </div>
+            <div className="flex justify-center flex-wrap space-x-4">
+                {fourCards.map((item) => (
+                    <Card
+                        key={item.id}
+                        hoverable={false}
+                        bordered={true}
+                        className="w-[300px] m-3  bg-inherit text-black"
+                        cover={
+                            <Image src={"https://s3.amazonaws.com/images.seroundtable.com/google-amp-1454071566.jpg"} alt={item.title} className="!w-[300px] !h-[160px]" preview={false} />}
+                    >
+                        <Card.Meta title={<div className="text-xl mb-2 text-black">{item.title}</div>} />
+                        <Card.Meta description={<div className="text-sm text-black">{item.description}</div>} />
+                    </Card>
+                ))}
+            </div>
+            <div className="flex justify-center mt-10 mb-20">
+                <Button className='!text-white font-medium w-[150px] bg-blue-700 !rounded-none'
+                    onClick={()=>push("/Allcategory")}
+                    type="primary"
+                    size="large">View All
+                    {/* <Link href={"../Allcategory"}> View All</Link> */}
+                    
+                </Button>
+
+            </div>
+        </div>
+    );
+};
+
+export default Courses;

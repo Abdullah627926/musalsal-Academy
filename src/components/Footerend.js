@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {  FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
-// import { Divider } from 'antd';
+
 
 
 const Footerend = () => {
@@ -13,7 +13,6 @@ const Footerend = () => {
 
     <div className='text-gray-700  m-10' >
         <div className='w-80 h-[4px] mb-7 bg-blue-700 inline-block shadow-md '></div>
-        {/* <Divider className="className=' size-1 w-25 bg-blue-800" /> */}
         <img
             src="https://10pearlsuniversity.org/wp-content/uploads/2021/02/10PU-footer-logo.png"
             alt="Logo"
@@ -25,14 +24,12 @@ const Footerend = () => {
     </div>
 
     <div className='text-gray-700 m-10'>
-    {/* <Divider className="className=' h-[2px] w-25 bg-gray-400" /> */}
 
 
         <h2 className='text-blue-800 text-xl font-bold mb-4' >Company</h2>
         <Link href={"contact"}>Contact Us</Link>
     </div>
     <div className='text-gray-700 m-10 '>
-    {/* <Divider className="className=' h-[2px] w-25 bg-gray-400" /> */}
 
 
         <h2 className='text-blue-800 text-xl font-bold mb-4'>Important Links</h2>
@@ -41,7 +38,6 @@ const Footerend = () => {
         <p>Academia</p>
     </div>
     <div className='text-gray-700 m-10'>
-    {/* <Divider className="className=' h-[2px] w-25 bg-gray-400" /> */}
 
         <h2 className='text-blue-800 text-xl font-bold mb-4'> Social Media</h2>
 
@@ -57,5 +53,4 @@ const Footerend = () => {
     </>
   )
 }
-// border-t-2 border-gray
 export default Footerend;

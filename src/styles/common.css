@@ -1,0 +1,12 @@
+.bg-blue-button {
+  color: #0045a6 !important;
+  background-color: #fff !important;
+  border-color: #0045a6 !important;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.bg-blue-button:hover {
+  color: #fff !important;
+  background-color: #0045a6 !important;
+  border-color: #0045a6 !important;
+}

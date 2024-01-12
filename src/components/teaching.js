@@ -3,35 +3,36 @@ import React from 'react';
 
 const Teaching = () => {
     return (
-        <>
-            <div className='flex justify-center items-center pl-40 pr-40 h-[500px] bg-gray-200'>
-                <div className='mt-10 w-full sm:w-1/2 px-6'>
-                    <div className='font-bold text-4xl mb-2'>Teach on</div>
-                    <div className='font-bold text-4xl mb-6'>Musalsal University</div>
+        <div className='flex justify-center w-full  bg-gray-200'>
+            <div className='flex justify-center items-center w-[84%]'>
+                <div className='mt-10 w-full sm:w-1/3'>
+                    <h2 className='font-bold text-4xl mb-2'>Teach on</h2>
+                    <h2 className='font-bold text-4xl mb-6'>Musalsal University</h2>
                     <p>
                         Join our diverse group of instructors and make an impact by imparting your expertise and experience
                         with our ever-growing community of learners.
                     </p>
                     <div className=" mt-10 mb-20">
                         <Button
-                            className='!text-blue-800 font-medium w-[230px] bg-white border-solid border-2 border-blue-900 !rounded-sm'
+                            className='teachbtn font-medium w-[230px] bg-white border-solid border-2 border-blue-900 !rounded-sm'
                             type="primary"
                             size="large"
                         >
-                        Start Teaching Today
+                            Start Teaching Today
                         </Button>
                     </div>
                 </div>
                 <div className='hidden sm:block  pl-10 w-full sm:w-1/2'>
                     <Image
-                        src={"https://s3.amazonaws.com/images.seroundtable.com/google-amp-1454071566.jpg"}
-                        className="!w-[100%] !h-[100%]"
+                        src={"https://10pearlsuniversity.org/wp-content/uploads/2022/11/tech-on-622x730.webp"}
+                        className="!w-[468px] !h-[549px] pb-10"
+                        preview={false}
 
                     />
                 </div>
 
             </div>
-        </>
+        </div>
     );
 };
 

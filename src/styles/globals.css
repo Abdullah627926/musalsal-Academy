@@ -2,4 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+.login {
+  background: linear-gradient(to left, #0045a6, #002353) !important;
+}
+.teachbtn {
+  color: #0045a6 !important;
+  background-color: #fff !important;
+  border-color: #0045a6 !important;
+  transition: background-color 0.2s ease-in-out;
+}
+.teachbtn:hover {
+  color: #fff !important;
+  background-color: #0045a6 !important;
+  border-color: #0045a6 !important;
+}
+.border-custom {
+  border-top: 2px solid #848484;
+  display: inline-block;
+  width: 74%;
+  margin-left: 1%;
+}
 
