@@ -99,7 +99,7 @@ const { push } = useRouter();
           <Menu.Item className="ml-[30px]">
             <Button
             onClick={() => push("/login")}
-             className='bg-blue-600' type="primary">
+             className='text-white font-bold bg-gradient-to-r from-blue-900 to-blue-500 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-900'>
               SIGN UP/LOGIN
             </Button>
           </Menu.Item>
