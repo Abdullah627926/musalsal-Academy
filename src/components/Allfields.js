@@ -1,15 +1,46 @@
 import { Card, Image } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-import React, { useState } from 'react';
-import { dummyData } from './data/data';
+import React, { useEffect, useState } from 'react';
+import axios from '@/utils/axios';
+
 
 const Allfields = () => {
+    const [courses, setCourses] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
     const [searchQuery, setSearchQuery] = useState('');
-    const filteredData = dummyData.filter(
+
+    const getcourses = async () => {
+        try {
+          setIsLoading(true);
+          const response = await axios.get("/courses");
+          setCourses(response.data); // Assuming your data is directly in the response
+        } catch (error) {
+          setError(error.message);
+        } finally {
+          setIsLoading(false);
+        }
+      };
+
+    useEffect(() => {
+        (async () => {
+            await getcourses();
+        })();
+    }, []);
+
+    if (isLoading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return <p>Error: {error}</p>;
+    }
+
+    const filteredData = courses ? courses.filter(
         (item) =>
             item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             item.description.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    ) : [];
 
     return (
         <>
@@ -42,7 +73,7 @@ const Allfields = () => {
                             hoverable
                             className="transition-transform hover:transform hover:scale-125 "
                             cover={<Image
-                                src={"https://img.youtube.com/vi/tEOoJqqCskM/maxresdefault.jpg"}
+                                src={item.thumbnail}
                                 alt={item.title}
                                 className='!w-[300px]  !h-[160px]' />}
                         >

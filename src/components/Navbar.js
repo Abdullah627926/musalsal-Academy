@@ -11,7 +11,8 @@ const Navbar = () => {
   const [hoveredAboutUs, setHoveredAboutUs] = useState(false);
   const [hoveredExplore, setHoveredExplore] = useState(false);
   const [hoveredServices, setHoveredServices] = useState(false);
-const { push } = useRouter();
+  const { push } = useRouter();
+
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
@@ -27,19 +28,23 @@ const { push } = useRouter();
         {collapsed ? '☰' : '✖'}
       </Button>
       <Menu
-        mode="horizontal"
-        className={`flex font-bold justify-between w-full ${
-          collapsed ? 'hidden md:flex' : ''
-        }`}
+        mode={collapsed ? 'vertical' : 'horizontal'}
+        className={`flex font-bold ${
+          collapsed ? 'flex-col' : 'justify-between'
+        } w-full ${collapsed ? 'hidden md:flex' : ''}`}
       >
         <div>
           <Menu.Item key="logo" style={{ padding: '0' }}>
-            <img
-            onClick={()=>push("/")}
-              src="https://10pearlsuniversity.org/wp-content/uploads/2021/02/10PU-footer-logo.png"
-              alt="Logo"
-              style={{ height: '64px', width: 'auto' }}
-            />
+            <Link href="/">
+            
+                <img
+                  onClick={() => push("/")}
+                  src="https://10pearlsuniversity.org/wp-content/uploads/2021/02/10PU-footer-logo.png"
+                  alt="Logo"
+                  style={{ height: '64px', width: 'auto' }}
+                />
+              
+            </Link>
           </Menu.Item>
         </div>
         <div>
@@ -51,7 +56,7 @@ const { push } = useRouter();
           >
             {hoveredAboutUs && (
               <Menu className='hover:text-blue-700 transition duration-300'>
-                <Menu.Item key="1" onClick={()=>push('/about-us')} >Musalsal University</Menu.Item>
+                <Menu.Item key="1" onClick={() => push('/about-us')} >Musalsal University</Menu.Item>
                 <Menu.Item key="2">Professional Development</Menu.Item>
                 <Menu.Item key="3">Musalsal Uni Orbit</Menu.Item>
               </Menu>
@@ -68,7 +73,7 @@ const { push } = useRouter();
               <Menu className='hover:text-blue-700 transition duration-100'>
                 <Menu.Item key="4">Webinar</Menu.Item>
                 <Menu.Item key="5">
-                  <Link href={"./Allcategory"}>Courses</Link>
+                  <Link href={"/Allcategory"}>Courses</Link>
                 </Menu.Item>
                 <Menu.Item key="6">Events</Menu.Item>
               </Menu>
@@ -91,15 +96,15 @@ const { push } = useRouter();
           </SubMenu>
 
           <Menu.Item key="link1">
-            <Link href={"blogs"}>Blog</Link>
+            <Link href={"/blogs"}>Blog</Link>
           </Menu.Item>
           <Menu.Item key="link2">
-            <Link href={"contact"}>Contact Us</Link>
+            <Link href={"/contact"}>Contact Us</Link>
           </Menu.Item>
           <Menu.Item className="ml-[30px]">
             <Button
-            onClick={() => push("/login")}
-             className='text-white font-bold bg-gradient-to-r from-blue-900 to-blue-500 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-900'>
+              onClick={() => push("/login")}
+              className='text-white font-bold bg-gradient-to-r from-blue-900 to-blue-500 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-900'>
               SIGN UP/LOGIN
             </Button>
           </Menu.Item>

@@ -1,28 +1,37 @@
 import React from 'react';
-import { Form, Image, Input, Button, Checkbox } from 'antd';
+import { Form, Image, Input, Button, Checkbox, message } from 'antd';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
+import axios from '@/utils/axios';
 
 const RegisterPage = () => {
-    const onFinish = (values) => {
-        console.log('Received values:', values);
-        // Add your registration logic here
+    const router = useRouter();
+    const onFinish = async (values) => {
+        try {
+            const response = await axios.post('/auth/signup', values);
+            message.success('Registration successful. Please login.');
+            router.push("/login");
+        } catch (error) {
+            console.error('Registration failed:', error);
+            message.error('Registration failed. Please check your information.');
+        }
     };
 
     const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
     };
 
     return (
         <div className="flex items-center h-screen bg-gray-100">
             <Image
-                src={"        https://10pearlsuniversity.org/wp-content/themes/masterstudy-child/stm-lms-templates/custom_assets/img/register-1.jpg"}
+                src={"https://10pearlsuniversity.org/wp-content/themes/masterstudy-child/stm-lms-templates/custom_assets/img/register-1.jpg"}
                 className="!w-[97%] !h-[97%]"
+                preview={false}
             />
             <div className="w-full max-w-md mx-auto pr-[100px]">
-                <h1 className='font-bold text-5xl mb-10 flex justify-center text-blue-800 '>Register</h1>
+                <h1 className='font-bold text-5xl ml-20 mb-10 flex justify-center text-blue-800 '>Register</h1>
 
                 <Form
-                    className=' font-medium  '
+                    className='font-medium'
                     name="registerForm"
                     labelCol={{ span: 8 }}
                     wrapperCol={{ span: 16 }}
@@ -31,11 +40,18 @@ const RegisterPage = () => {
                     onFinishFailed={onFinishFailed}
                 >
                     <Form.Item
-                        label="Name"
-                        name="name"
-                        rules={[{ required: true, message: 'Please input your name!' }]}
+                        label="FirstName"
+                        name="Firstname"
+                        rules={[{ required: true, message: 'Please input your firstname!' }]}
                     >
-                        <Input className='px-5 border rounded-sm w-96 pt-2 pb-2' placeholder='enter your name.... ' />
+                        <Input className='px-5 border rounded-sm w-96 pt-2 pb-2' placeholder='Enter your firstname' />
+                    </Form.Item>
+                    <Form.Item
+                        label="LastName"
+                        name="lastname"
+                        rules={[{ required: true, message: 'Please input your lastname!' }]}
+                    >
+                        <Input className='px-5 border rounded-sm w-96 pt-2 pb-2' placeholder='Enter your Lastname' />
                     </Form.Item>
 
                     <Form.Item
@@ -46,7 +62,7 @@ const RegisterPage = () => {
                             { type: 'email', message: 'Invalid email format!' },
                         ]}
                     >
-                        <Input className='px-5 border rounded-sm w-96 pt-2 pb-2' placeholder='enter your email ' />
+                        <Input className='px-5 border rounded-sm w-96 pt-2 pb-2' placeholder='Enter your email' />
                     </Form.Item>
 
                     <Form.Item
@@ -54,7 +70,7 @@ const RegisterPage = () => {
                         name="password"
                         rules={[{ required: true, message: 'Please input your password!' }]}
                     >
-                        <Input.Password className='px-5 border rounded-sm w-96 pt-2 pb-2' placeholder='enter your password' />
+                        <Input.Password className='px-5 border rounded-sm w-96 pt-2 pb-2' placeholder='Enter your password' />
                     </Form.Item>
 
                     <Form.Item
@@ -73,7 +89,7 @@ const RegisterPage = () => {
                             }),
                         ]}
                     >
-                        <Input.Password className='px-5 border rounded-sm w-96 pt-2 pb-2' placeholder='confirm your password' />
+                        <Input.Password className='px-5 border rounded-sm w-96 pt-2 pb-2' placeholder='Confirm your password' />
                     </Form.Item>
 
                     <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
@@ -81,14 +97,11 @@ const RegisterPage = () => {
                     </Form.Item>
 
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                        <Button
-                            className='w-full font-bold p-1 bg-blue-800 rounded-none' type="primary" htmlType="submit"
-                        >
+                        <Button className='w-full font-bold p-1 bg-blue-800 rounded-none' type="primary" htmlType="submit" >
                             Register
                         </Button>
                     </Form.Item>
-                    <Link className=' flex justify-center ml-10 text-blue-800' href={"login"}>Already a member? Login here</Link>
-
+                    <Link className='flex justify-center ml-20 text-blue-800' href={"/login"}>Already a member? Login here</Link>
                 </Form>
             </div>
         </div>
