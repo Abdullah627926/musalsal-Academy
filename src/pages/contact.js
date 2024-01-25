@@ -1,5 +1,5 @@
 import { PhoneFilled } from '@ant-design/icons';
-import { FaMapMarkerAlt, FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
 import { Divider } from 'antd';
 import React from 'react'
@@ -18,14 +18,14 @@ const contact = () => {
                     <h4 className='font-medium '>Postal Address:</h4>
                     <div className='flex '> 
                     <FaMapMarkerAlt className="text-blue-950  hover:text-blue-700 transition duration-300 size-8" />
-                    <p className='text-gray-700 ml-4'> Ground floor on Flates,Front of Madina Masjid.Labour Square Site Area , Karachi, Pakistan</p>
+                    <p className='text-gray-700 ml-4'> Ground floor ,InFront of Madina Masjid.Labour Square Site Area , Karachi, Pakistan</p>
                     </div>
                     <Divider className="className=' 2px mb-7 bg-gray-800" />
 
                     <h4 className='font-medium '>Phone:</h4>
                     <div className='flex  '> 
                     <PhoneFilled className="text-blue-950 hover:text-blue-700 transition duration-300 size-8" />
-                    <p className='text-gray-700'> +92 320 8244441</p>
+                    <p className='text-gray-700'> +92 312 2029166</p>
                    
                     </div>
                     <Divider className="className=' 2px mb-7 bg-gray-800" />
@@ -33,7 +33,7 @@ const contact = () => {
                     <h4 className='font-medium '>Email:</h4>
                     <div className='flex  '>
                     <MdMarkEmailRead className="text-blue-950 hover:text-blue-700 transition duration-300 size-8" />
-                    <p className='text-gray-700 ml-4'>university@10pearls.com</p>
+                    <p className='text-gray-700 ml-4'>Musalsaluniversity@gmail.com</p>
                     </div>
                 </div>
                 <div className='m-20'>

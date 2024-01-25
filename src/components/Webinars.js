@@ -38,15 +38,15 @@ const Webinars = () => {
                     We have a variety of webinars lined up for you. Check them out here.
                 </h2>
                 <div className="flex justify-center items-center ">
-                    <div className="flex  gap-0">
+                    <div className="flex  gap-1">
                         {dummyData.map((item) => (
                             <Card
                                 key={item.id}
                                 hoverable
-                                className="w-[200px] h-[200px]  border-none bg-white text-black"
+                                className="w-[300px] h-[220px]  border-none bg-white text-black"
                                 cover={<Image
                                     preview={false}
-                                    src={"https://s3.amazonaws.com/images.seroundtable.com/google-amp-1454071566.jpg"} alt={item.title} className="!w-[250px] !h-[130px]" />}
+                                    src={"https://10pearlsuniversity.org/wp-content/uploads/2022/12/how-cnns-work-2022-webinar-thumb-399x280.jpg"} alt={item.title} className="!w-[250px] !h-[130px]" />}
                             >
                                 <Card.Meta title={<div className="text-xl mb-2 text-black">{item.title}</div>} />
                             </Card>

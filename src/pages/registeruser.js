@@ -13,7 +13,7 @@ const RegisterPage = () => {
             router.push("/login");
         } catch (error) {
             console.error('Registration failed:', error);
-            message.error('Registration failed. Please check your information.');
+            message.error("User with this email already exists");
         }
     };
 
@@ -41,14 +41,14 @@ const RegisterPage = () => {
                 >
                     <Form.Item
                         label="FirstName"
-                        name="Firstname"
+                        name="firstName"
                         rules={[{ required: true, message: 'Please input your firstname!' }]}
                     >
                         <Input className='px-5 border rounded-sm w-96 pt-2 pb-2' placeholder='Enter your firstname' />
                     </Form.Item>
                     <Form.Item
                         label="LastName"
-                        name="lastname"
+                        name="lastName"
                         rules={[{ required: true, message: 'Please input your lastname!' }]}
                     >
                         <Input className='px-5 border rounded-sm w-96 pt-2 pb-2' placeholder='Enter your Lastname' />
@@ -92,7 +92,7 @@ const RegisterPage = () => {
                         <Input.Password className='px-5 border rounded-sm w-96 pt-2 pb-2' placeholder='Confirm your password' />
                     </Form.Item>
 
-                    <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
+                    <Form.Item valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
                         <Checkbox>Remember me</Checkbox>
                     </Form.Item>
 

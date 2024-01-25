@@ -9,8 +9,9 @@ const loginpage = () => {
     const onFinish = async (values) => {
         try {
             const response = await axios.post('/auth/login', values);
-            push("/dashboard")
-
+            localStorage.setItem("token", response?.data?.token)
+            localStorage.setItem("user_id", response?.data?.user?._id)
+            push("/userProfile")
         } catch (error) {
             console.error('Login failed:', error);
             message.error('Login failed. Please check your credentials.');

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  /* font-family:'proxima-nova-bold'; */
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .login {
   background: linear-gradient(to left, #0045a6, #002353) !important;
 }
@@ -22,4 +26,11 @@
   width: 74%;
   margin-left: 1%;
 }
-
+.main {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: auto;
+  max-width: 1200px;
+}
