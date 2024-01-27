@@ -1,9 +1,6 @@
 // next.config.js
 
 const nextConfig = {
-  // images: {
-  //   remotePatterns: ['https://images.app.goo.gl/.*'],
-  // },
 
   transpilePackages: [
     'rc-util',
