@@ -3,26 +3,28 @@ import { Avatar } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { Tabs } from 'antd';
 import axios from '@/utils/axios';
+import { useRouter} from "next/router";
 
 
 const userProfile = () => {
-  const [size, setSize] = useState('large');
   const [user, setuser] = useState()
-  const onChange = (e) => {
-    setSize(e.target.value);
-  };
+  const router = useRouter();
+
   const getUser = async () => {
     try {
-      const user_id = localStorage.getItem("user_id");
-      console.log("🚀 ~ getUser ~ user_id:", user_id)
-      const _id = user_id;
-      const response = await axios.get(`/auth/me/${_id}`)
-      console.log("🚀 ~ getUser ~ response:", response.data)
-      setuser(response?.data?.data)
+      const user_id = localStorage.getItem('user_id');
+      if (!user_id) {
+        router.replace('/login');
+        return;
+      }
+      console.log('🚀 ~ getUser ~ user_id:', user_id);
+      const response = await axios.get(`/auth/me/${user_id}`);
+      console.log('🚀 ~ getUser ~ response:', response.data);
+      setuser(response?.data?.data);
     } catch (error) {
-      console.log("🚀 ~ getUser ~ error:", error)
+      console.log('🚀 ~ getUser ~ error:', error);
     }
-  }
+  };
 
 
   useEffect(() => {

@@ -1,5 +1,6 @@
-import { Button, Image } from 'antd';
 import React from 'react';
+import { Button, Image } from 'antd';
+import { push } from 'next/router';
 
 const Teaching = () => {
     return (
@@ -14,6 +15,7 @@ const Teaching = () => {
                     </p>
                     <div className=" mt-10 mb-20">
                         <Button
+                            onClick={() => push("/contact")}
                             className='teachbtn font-medium w-[230px] bg-white border-solid border-2 border-blue-900 !rounded-sm'
                             type="primary"
                             size="large"

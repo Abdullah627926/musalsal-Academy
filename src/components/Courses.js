@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
-import { Card, Image, Button } from 'antd';
+import { Button } from 'antd';
 import React from 'react';
 import CustomCard from './Card';
+
 const dummyData = [
     {
         id: 1,

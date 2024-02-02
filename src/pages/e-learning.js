@@ -17,7 +17,6 @@ const elearning = () => {
               className='teachbtn font-medium w-[230px] bg-white border-solid border-2 border-blue-900 !rounded-sm'
               type="primary"
               size="large"
-
             >
               CONNECT WITH US
             </Button>

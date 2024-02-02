@@ -8,19 +8,19 @@ const dummyData = [
     id: 1,
     title: "Skilled Trainers",
     description: "Learn from experienced industry professionals who provide hands-on knowledge with real-life applications.",
-    thumbnail: "https://example.com/product1.jpg",
+    thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2EnGS_5AIkBVk8xdK0RjU1ldHrmNFc4xw8g&usqp=CAU"
   },
   {
     id: 2,
     title: "Live & Interactive",
     description: "Communicate and engage with your trainer and other students for a collaborative learning experience.",
-    thumbnail: "https://example.com/product2.jpg",
+    thumbnail: "",
   },
   {
     id: 3,
     title: "Convenient & Remote",
     description: "Recorded sessions for learning at your own pace. Safe and easy access to all trainings and webinars.",
-    thumbnail: "https://example.com/product3.jpg",
+    thumbnail: "",
   },
 ];
 

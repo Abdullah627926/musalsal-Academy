@@ -3,7 +3,6 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
 import { Divider } from 'antd';
 import React from 'react'
-import Link from 'next/link';
 
 const contact = () => {
 

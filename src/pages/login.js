@@ -5,13 +5,13 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 const loginpage = () => {
-    const { push } = useRouter()
+    const { replace } = useRouter()
     const onFinish = async (values) => {
         try {
             const response = await axios.post('/auth/login', values);
             localStorage.setItem("token", response?.data?.token)
             localStorage.setItem("user_id", response?.data?.user?._id)
-            push("/userProfile")
+            replace("/userProfile")
         } catch (error) {
             console.error('Login failed:', error);
             message.error('Login failed. Please check your credentials.');

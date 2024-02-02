@@ -20,7 +20,7 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   useEffect(() => {
-    // Additional logic to run when isLoggedIn changes
+  
   }, [isLoggedIn]);
   
   const toggleCollapsed = () => {
@@ -28,11 +28,11 @@ const Navbar = () => {
   };
   const handleLogin = () => {
          router.push("/login");
-         // Your login logic here
-    setIsLoggedIn(true); // Set state to true after successful login
+        
+    setIsLoggedIn(true); 
  };
   const handleLogout = () => {
-    confirm({
+    confirm ({
        title: 'Logout',
        icon: <ExclamationCircleOutlined />,
        content: 'Are you sure you want to logout?',
@@ -40,12 +40,11 @@ const Navbar = () => {
          localStorage.clear('user_token');
          setIsLoggedIn(false);
          console.log('User logged out!');
-         router.push("/");
+         router.replace("/");
        },
        onCancel() {
          console.log('Logout canceled');
        },
-      //  style:{backgroundColor: 'blue',color:"black" }
     });
    };
    const handleUser = () => {
